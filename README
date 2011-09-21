@@ -11,9 +11,9 @@ Mark Duffy markaduffy@gmail.com http://www.markaduffy.net
 
 -- INSTALL STEPS --
 
-This repo has a full cakephp app. The cake-wijmo plugin is in the plugins folder.
+This repo has a full cakephp app. The wijmo-open plugin is in the plugins folder.
 
-1. Place file in your cakephp app plugins folder ie /plugins/wijmo-cake/
+1. Place wijmo-open plugin in your cakephp app plugins folder ie /plugins/wijmo-open/
 
 If you have any questions or need me to walk you through the steps, let me know. markaduffy@gmail.com
 
