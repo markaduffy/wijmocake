@@ -3,14 +3,22 @@
 v0.1
 
 
-This is a very early beta. The only helper right now is a wijtooltip. Its a limited helper. Soon will add ability to insert tool tip onto a link, image, span.
+This is a very early beta. The only helper right now is a wijtooltip. Its a limited helper. Soon will add ability to insert tool tip onto a images, spans.
+
+Wigets to come. Menu and Grid
 
 Mark Duffy markaduffy@gmail.com http://www.markaduffy.net
 
 -- INSTALL STEPS --
+
+This repo has a full cakephp app. The cake-wijmo plugin is in the plugins folder.
 
 1. Place file in your cakephp app plugins folder ie /plugins/wijmo-cake/
 
 If you have any questions or need me to walk you through the steps, let me know. markaduffy@gmail.com
 
 I'm interested to hear from people who would like to contribute to this project.
+
+Commands
+
+<?php echo $this->Wijmo->tooltip(array("title"=>"This is the title for this tooltip")); ?>
