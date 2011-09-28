@@ -3,7 +3,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php __('CakePHP: the rapid development php framework:'); ?>
+		<?php __('WijmoCake: A jQuery UI cakephp helper plugin '); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
 
@@ -16,14 +16,14 @@
 
 
 	<?php
-		echo $this->Html->css('style');
+		echo $this->Html->css('/wijmo-open/css/style');
 		echo $scripts_for_layout;
 	?>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1>WijmoCake</h1>
+			<h1>WijmoCake - A jQuery UI cakephp helper plugin</h1>
 		</div>
 		<div id="content">
 

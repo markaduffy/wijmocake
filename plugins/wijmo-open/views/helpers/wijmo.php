@@ -3,14 +3,44 @@
 
 class WijmoHelper extends AppHelper {
 
+	var $helpers = array('Html');
+
 	function tooltip($properties) {
 		
-		$title = $properties['title'];
+		extract($properties);
 
-		$output = '<script type="text/javascript">jQuery(function($) {$(".wijtooltip").wijtooltip();});</script>';
-		$output .= '<h3><a onclick="return false;" class="wijtooltip" title="' . $title . '" href="#">I have a tooltip</a></h3>';
+		if (!isset($title)) $title = null;
+		if (!isset($class)) $class = "wijmocake-tooltip";
+		if (!isset($tip)) $tip = "Default ToolTip";
+		if (!isset($tag)) $tag = "span";
+		if (!isset($url)) $url = "#";
 
-		return $output;
+		$this->generate_script($class);
+
+		if ($tag == 'a'){
+			return $this->Html->tag($tag, $title, array('href' => $url, 'class' => $class, 'title' => $tip));
+		} else {
+			return $this->Html->tag($tag, $title, array('class' => $class, 'title' => $tip));
+		}
+
+	}
+
+	function generate_script($class){
+		
+		ob_start();
+
+		?>
+
+				jQuery(function($) {
+					$('.<?php echo $class ?>').wijtooltip();
+				});
+
+		<?php
+
+		$jscript = ob_get_contents();
+		ob_end_clean();
+
+		echo $this->Html->scriptBlock($jscript, array("inline" => false));
 
 	}
 
