@@ -1,13 +1,13 @@
 ############ WIJMOCAKE - A jQuery UI cakephp helper plugin. ###############
 
-v0.1
+v0.2
 
+UPDATE: 9/27/2011
 
-This is a very early beta. The only helper right now is a limited wijtooltip. Soon I will add ability to insert tool tip onto images, spans etc.
+- js init now pushed to header. 
+- added new properties to tooltip. Can specify classname and tag.
 
 Wigets to come include wijmenu and grid.
-
-Mark Duffy markaduffy@gmail.com http://www.markaduffy.net
 
 -- INSTALL STEPS --
 
@@ -21,4 +21,22 @@ I'm interested to hear from people who would like to contribute to this project.
 
 Commands
 
-<?php echo $this->Wijmo->tooltip(array("title"=>"This is the title for this tooltip")); ?>
+<?php 
+
+echo $this->Wijmo->tooltip(array(
+	"tag" => "a",
+	"title" => "I am a link. Hover over me!",
+	"class" => "wijmotooltip", 
+	"tip" => "This is another tooltip"
+));
+
+echo $this->Wijmo->tooltip(array(
+	"tag" => "span",
+	"title" => "Hover over me!",
+	"class" => "wijmotooltip", 
+	"tip" => "This is a tool tip!"
+));	
+
+?>
+
+Mark Duffy markaduffy@gmail.com http://www.markaduffy.net
