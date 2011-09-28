@@ -5,9 +5,9 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'pittsburgh',
-		'database' => 'wijmocake',
+		'login' => '',
+		'password' => '',
+		'database' => '',
 	);
 }
 ?>
