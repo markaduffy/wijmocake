@@ -9,4 +9,9 @@ UPDATE: 11/07/2011
  - Helper now loads in dependencies inside helper. No need to add to layout.
  - wijtooltip. Can pass tag,title and url for anchor or tag,title for others ie span,p etc
 
+ INSTALL
+
+ - git clone git@github.com:markaduffy/wijmocake.git wijmocake - to your websites plugin folder.
+ - Add var $helpers = array('Wijmocake.Wijmo') to your websites app_controller.php
+
 Mark Duffy markaduffy@gmail.com http://www.markaduffy.net
