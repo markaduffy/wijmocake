@@ -1,0 +1,17 @@
+/* style.css in plugin */
+
+body {
+	font-family: georgia;
+}
+
+div.wijmo {
+	background-color:#c0c0c0;
+	padding:4px;
+}
+
+.code {
+	font-family: georgia;
+	background-color:#c0c0c0;
+	margin-top:5px;
+	padding:4px;
+}
