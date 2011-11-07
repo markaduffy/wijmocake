@@ -1,0 +1,5 @@
+2011-09-01 22:28:02 Notice: Notice (8): Undefined property: View::$Wijmo in [/var/www/wijmocake.local/views/pages/home.ctp, line 8]
+2011-09-01 22:29:27 Notice: Notice (8): Undefined property: View::$Session in [/var/www/wijmocake.local/views/layouts/default.ctp, line 30]
+2011-09-01 22:29:35 Notice: Notice (8): Undefined property: View::$Session in [/var/www/wijmocake.local/views/layouts/default.ctp, line 30]
+2011-09-01 22:30:00 Notice: Notice (8): Undefined property: View::$Session in [/var/www/wijmocake.local/views/layouts/default.ctp, line 30]
+2011-09-01 22:41:46 Notice: Notice (8): Undefined variable: output in [/var/www/wijmocake.local/plugins/wijmo-open/views/helpers/wijmo.php, line 10]
