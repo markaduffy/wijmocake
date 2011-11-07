@@ -1,0 +1,12 @@
+############ WIJMOCAKE - A jQuery UI cakephp helper plugin. ###############
+
+v0.3
+
+UPDATE: 11/07/2011
+
+ - Pulled plugin out of demo cakephp app. Plugin can now be easily cloned to peoples cakephp applications.
+ - May be issues with permissions (Testing)
+ - Helper now loads in dependencies inside helper. No need to add to layout.
+ - wijtooltip. Can pass tag,title and url for anchor or tag,title for others ie span,p etc
+
+Mark Duffy markaduffy@gmail.com http://www.markaduffy.net
