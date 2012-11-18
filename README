@@ -1,8 +1,14 @@
 ############ WIJMOCAKE - A jQuery UI cakephp helper plugin. ###############
 
-v0.3
+UPDATE: 11/18/2012
+
+v 0.3.1
+
+A little over a year later, Ive decided to update this plugin. Updated to wijmo open 2.3.1.
 
 UPDATE: 11/07/2011
+
+v0.3
 
  - Pulled plugin out of demo cakephp app. Plugin can now be easily cloned to peoples cakephp applications.
  - Helper now loads in dependencies inside helper. No need to add to layout.
