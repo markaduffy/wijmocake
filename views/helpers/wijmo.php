@@ -6,10 +6,10 @@ class WijmoHelper extends AppHelper {
 
 	function beforeRender() {
 		$this->Html->css('/wijmocake/themes/rocket/jquery-wijmo.css', null, array('inline' => false));
-		$this->Html->css('/wijmocake/css/jquery.wijmo-open.1.4.1.css', null, array('inline' => false));
-	    $this->Html->script('http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js',false);
-		$this->Html->script('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js',false);
-		$this->Html->script('/wijmocake/js/jquery.wijmo-open.1.4.1.min.js',false);
+		$this->Html->css('/wijmocake/css/jquery.wijmo-open.2.3.1.css', null, array('inline' => false));
+	    $this->Html->script('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js',false);
+		$this->Html->script('https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js',false);
+		$this->Html->script('/wijmocake/js/jquery.wijmo-open.all.2.3.1.min.js',false);
 	}
 
 

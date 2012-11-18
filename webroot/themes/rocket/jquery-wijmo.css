@@ -3,7 +3,7 @@
  * Wijmo Rocket Theme
  * http://wijmo.com/
  * 
- * Copyright(c) ComponentOne, LLC.  All rights reserved.
+ * Copyright(c) GrapeCity, Inc.  All rights reserved.
  * 
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * licensing@wijmo.com
@@ -35,28 +35,16 @@
     font-size: 100%;
     list-style: none;
 }
-.ui-helper-clearfix:after
-{
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+.ui-helper-clearfix:before, .ui-helper-clearfix:after {
+	content: "";
+	display: table;
 }
-.ui-helper-clearfix
-{
-    display: inline-block;
+.ui-helper-clearfix:after {
+	clear: both;
 }
-/* required comment for clearfix to work in Opera \*/
-* html .ui-helper-clearfix
-{
-    height: 1%;
+.ui-helper-clearfix {
+	zoom: 1;
 }
-.ui-helper-clearfix
-{
-    display: block;
-}
-/* end clearfix */
 .ui-helper-zfix
 {
     width: 100%;
@@ -122,7 +110,7 @@
 .ui-widget
 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 100%;
 }
 .ui-widget .ui-widget
 {
@@ -1198,58 +1186,12 @@
  * http://docs.jquery.com/UI/Accordion#theming
  */
 /* IE/Win - Fix animation bug - #4615 */
-.ui-accordion
-{
-    width: 100%;
-}
-.ui-accordion .ui-accordion-header
-{
-    cursor: pointer;
-    position: relative;
-    margin-top: 1px;
-    zoom: 1;
-}
-.ui-accordion .ui-accordion-li-fix
-{
-    display: inline;
-}
-.ui-accordion .ui-accordion-header-active
-{
-    border-bottom: 0 !important;
-}
-.ui-accordion .ui-accordion-header a
-{
-    display: block;
-    font-size: 1em;
-    padding: .5em .5em .5em .7em;
-}
-.ui-accordion-icons .ui-accordion-header a
-{
-    padding-left: 2.2em;
-}
-.ui-accordion .ui-accordion-header .ui-icon
-{
-    position: absolute;
-    left: .5em;
-    top: 50%;
-    margin-top: -8px;
-}
-.ui-accordion .ui-accordion-content
-{
-    padding: 1em 2.2em;
-    border-top: 0;
-    margin-top: -2px;
-    position: relative;
-    top: 1px;
-    margin-bottom: 2px;
-    overflow: auto;
-    display: none;
-    zoom: 1;
-}
-.ui-accordion .ui-accordion-content-active
-{
-    display: block;
-}
+.ui-accordion .ui-accordion-header { display: block; cursor: pointer; position: relative; margin-top: 2px; padding: .5em .5em .5em .7em; zoom: 1; }
+.ui-accordion .ui-accordion-icons { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-noicons { padding-left: .7em; }
+.ui-accordion .ui-accordion-icons .ui-accordion-icons { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
+.ui-accordion .ui-accordion-content { padding: 1em 2.2em; border-top: 0; overflow: auto; zoom: 1; }
 /*
  * jQuery UI Autocomplete 1.8.7
  *
@@ -1935,14 +1877,17 @@ button.ui-button::-moz-focus-inner
 
 .wijmo-wijinput, .wijmo-wijtextbox, .wijmo-wijgrid .wijmo-wijinput
 {
-    /*background: #242122 url(images/ui-bg_inset-soft_15_242122_1x100.png) 50% 50% repeat-x !important;*/ /*background: #e1e1e1 url(images/ui-bg_inset-soft_100_e1e1e1_1x100.png) 50% 50% repeat-x !important;*/
-    background: #f1f1f1 !important;
-    color: #404040;
-    border: solid 1px #e1e1e1;
+    background: #fff !important;
+    color: #404040 !important;
+    border: solid 1px #e1e1e1 !important;
 }
-.wijmo-checkbox .wijmo-checkbox-box, div.wijmo-wijradio-box
+.wijmo-wijinput:hover, .wijmo-wijtextbox:hover, .wijmo-wijgrid .wijmo-wijinput:hover, .wijmo-wijinput:focus, .wijmo-wijtextbox:focus, .wijmo-wijgrid .wijmo-wijinput:focus
 {
-    background: #f1f1f1;
+    border-color: #00a6dd !important;
+}
+.wijmo-checkbox .wijmo-checkbox-box, .wijmo-wijradio div.wijmo-wijradio-box
+{
+    background: #fff;
     border: solid 1px #e1e1e1;
 }
 .wijmo-wijinput.ui-state-focus, .wijmo-wijtextbox.ui-state-focus
@@ -1964,7 +1909,7 @@ button.ui-button::-moz-focus-inner
     text-shadow: none;
 }
 
-.wijmo-checkbox .ui-state-active, .wijmo-wijradio .ui-state-active
+.wijmo-checkbox .ui-state-active, .wijmo-wijradio .wijmo-wijradio-box.ui-state-active
 {
     -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
     -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
@@ -2067,7 +2012,7 @@ button.ui-button::-moz-focus-inner
     box-shadow: inset 0 3px 10px rgba(0,0,0,0.25);
 }
 
-.wijmo-wijsuperpanel  .wijmo-wijsuperpanel-handle
+.wijmo-wijsuperpanel .wijmo-wijsuperpanel-handle
 {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
@@ -2102,14 +2047,14 @@ button.ui-button::-moz-focus-inner
     border-top: solid 1px #d3d3d3;
 }
 
-.wijmo-wijcalendar-day-selectable .ui-state-default
+.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-default
 {
     background: none;
     border: solid 1px transparent;
     color: #404040;
 }
 
-.wijmo-wijcalendar-day-selectable .ui-state-highlight
+.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-highlight
 {
     background: #9eca38 url(images/ui-bg_highlight-soft_15_9eca38_1x100.png) 50% 50% repeat-x;
     border: 1px solid #9eca38;
@@ -2122,7 +2067,7 @@ button.ui-button::-moz-focus-inner
 
 
 
-.wijmo-wijcalendar-day-selectable .ui-state-hover
+.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-hover
 {
     -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
     -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
@@ -2133,7 +2078,6 @@ button.ui-button::-moz-focus-inner
     color: #fafafa;
     text-shadow: none;
 }
-
 .wijmo-wijmenu .wijmo-wijmenu-separator
 {
     border: 1px solid #00a6dd;
@@ -2146,7 +2090,7 @@ button.ui-button::-moz-focus-inner
     line-height: 22px;
 }
 
-.wijmo-wijcalendar-day-selectable .ui-state-active
+.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-active
 {
     -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
     -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
@@ -2157,7 +2101,7 @@ button.ui-button::-moz-focus-inner
     color: #fafafa;
 }
 
-.wijmo-wijcalendar-day-selectable .ui-priority-secondary
+.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-priority-secondary
 {
     -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
     -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
@@ -2321,4 +2265,167 @@ a.ui-button:link, a.ui-button
 .wijmo-wijmenu .wijmo-wijmenu-link label
 {
     color: #404040;
+}
+/* Ribbon */
+.wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .wijmo-wijribbon-text
+{
+    color: #fafafa;
+}
+div.wijmo-wijribbon .ui-icon
+{
+    background-image: url("images/wijmo-ui-icons_000000_240x112.png");
+}
+div.wijmo-wijribbon-simple span.ui-icon, div.wijmo-wijribbon .ui-state-active .ui-icon, .wijmo-wijribbon .wijmo-wijribbon-group .ui-button:hover .ui-icon, div.wijmo-wijribbon-modes span.ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .wijmo-wijribbon-abbrevicon
+{
+    background-image: url("images/wijmo-ui-icons_ffffff_240x112.png");
+}
+.wijmo-wijeditor .ui-tabs .ui-tabs-nav li.ui-tabs-selected
+{
+    padding-bottom: 0;
+}
+div.wijmo-wijribbon-simple .ui-button-text-icon-secondary .ui-button-text
+{
+    color: #fafafa;
+}
+
+
+div.wijmo-wijribbon .ui-state-active .ui-button-text
+{
+    border: solid 1px transparent;
+    border-radius: 4px;
+}
+
+.wijmo-wijev-event-dialog .wijmo-wijinput-input, 
+.wijmo-wijev-event-dialog .wijmo-wijtextbox
+{
+    color: #404040;
+}
+/* Grid highlight row icon fix */
+.wijmo-wijgrid .ui-state-highlight .ui-state-active .ui-icon {
+    background-image: url("images/ui-icons_00a6dd_256x240.png");
+}
+
+.wijmo-wijinput .wijmo-wijinput-input
+{
+    color: #404040;
+}
+
+/* WIJMO ACCORDION COMPATIBILITY */
+.wijmo-wijaccordion .ui-accordion-header
+{
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin-top: 2px;
+    zoom: 1;
+    padding: .5em .5em .5em .7em;
+    width: auto !important;
+}
+
+.wijmo-wijaccordion .ui-accordion-icon
+{
+    padding-left: 2.2em;
+}
+
+.wijmo-wijaccordion .ui-accordion-noicons
+{
+    padding-left: .7em;
+}
+
+.wijmo-wijaccordion .ui-accordion-header a
+{
+    padding-left: 1.2em;
+    font-size: 1em;
+    display: block;
+}
+
+.wijmo-wijaccordion .ui-accordion-header .ui-icon
+{
+    position: absolute;
+    left: .5em;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.wijmo-wijaccordion .ui-accordion-content
+{
+    overflow: auto;
+    zoom: 1;
+    padding: 1em 2.2em;
+    display: none;
+
+}
+.wijmo-wijaccordion .ui-accordion-content.ui-accordion-content-active
+{   
+    display: block;
+}
+
+.wijmo-wijaccordion a
+{
+    outline: none;
+}
+
+.wijmo-wijaccordion-bottom .ui-accordion-content-active
+{
+    border-top: none;
+ }
+
+.wijmo-wijaccordion-right .ui-accordion-header
+{
+    margin-top: 0;
+    margin-left: 1px;
+    height: 12em;
+    overflow: hidden;
+    padding: .7em .5em .5em;
+}
+
+.wijmo-wijaccordion-right .ui-accordion-content-active
+{
+    border-left: none;
+}
+
+.wijmo-wijaccordion-left .ui-accordion-header
+{
+    margin-top: 0;
+    margin-right: 1px;
+    height: 12em;
+    overflow: hidden;
+    padding: .7em .5em .5em;
+}
+
+.wijmo-wijaccordion-left .ui-accordion-content-active
+{
+    border-right: none;
+}
+
+.ui-accordion-top .ui-accordion-header
+{
+    margin: 0 0 1px;
+}
+
+.wijmo-wijaccordion-top .ui-accordion-content-active
+{
+    border-bottom: none;
+}
+
+.ui-accordion-right .ui-accordion-content, .ui-accordion-left .ui-accordion-content
+{
+    width: 36em;
+    height: 13em !important;
+    margin: 0;
+    padding: .7em 2.2em .5em;
+}
+
+.ui-accordion-right .ui-accordion-header a, .ui-accordion-left .ui-accordion-header a
+{
+    text-align: center;
+    padding: 1.2em .5em .5em !important;
+}
+
+.ui-accordion-right .ui-accordion-header .ui-icon, .ui-accordion-left .ui-accordion-header .ui-icon
+{
+    top: .5em !important;
+    left: 50%;
+    margin-left: -9px;
+    margin-top: 0;
 }
